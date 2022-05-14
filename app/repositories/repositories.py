@@ -1,5 +1,6 @@
+from app.models import (CompradorModel, CompraModel, FornecedorModel,
+                        ProdutoModel)
 from flask import current_app
-from app.models import CompradorModel,FornecedorModel,ProdutoModel,CompraModel
 
 
 class Repository():

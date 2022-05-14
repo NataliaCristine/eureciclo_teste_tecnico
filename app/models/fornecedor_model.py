@@ -1,8 +1,10 @@
-from app.configs.database import db
 from dataclasses import dataclass
-from sqlalchemy import Column, String
 from uuid import uuid4
+
+from app.configs.database import db
+from sqlalchemy import Column, String
 from sqlalchemy.dialects.postgresql import UUID
+
 
 @dataclass
 class FornecedorModel(db.Model):

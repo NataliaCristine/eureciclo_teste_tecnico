@@ -1,13 +1,18 @@
-from flask import Flask, request, render_template
-from app.controllers.controller_file import file_upload_save
+from app.controllers import file_upload_save, list_all
+from flask import render_template, request
+
 
 def file_save(app):
-    @app.route('/upload')
+    @app.route('/')
     def form_upload():
-        render_template()
+        return render_template('upload.html')
 
     @app.route('/register',methods = ['GET', 'POST'])
     def file_save():
         if request.method == 'POST':
             data = request.files
             output=file_upload_save(data)
+            return render_template('tabela.html', output=output)
+        
+        output = list_all()
+        return render_template('tabela.html', output=output)
