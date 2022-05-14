@@ -16,7 +16,7 @@ class CompraModel(db.Model):
 
     __tablename__ = 'compra'
 
-    id=Column(UUID(as_uuid=True),primary_key=True,default=True)
+    id=Column(UUID(as_uuid=True),primary_key=True,default=uuid4)
     quantidade=Column(Integer)
     produto_id = Column(UUID(as_uuid=True),ForeignKey('produto.id'))
     comprador_id = Column(UUID(as_uuid=True),ForeignKey('comprador.id'))
