@@ -1,6 +1,9 @@
-from flask import Flask
 from environs import Env
+from flask import Flask
+
 from app import views
+from app.configs import database, migrations
+
 
 def create_app():
     
@@ -14,5 +17,7 @@ def create_app():
     app.config['JSON_SORT_KEYS'] = False
 
     views.init_app(app)
+    database.init_app(app)
+    migrations.init_app(app)
 
     return app

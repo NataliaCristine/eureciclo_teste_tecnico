@@ -1,7 +1,5 @@
-from app.models.fornecedor_model import FornecedorModel
-from app.models.produto_model import ProdutoModel
-from app.models.comprador_model import CompradorModel
-from app.models.compra_model import CompraModel
+from app.models import FornecedorModel,ProdutoModel,CompradorModel,CompraModel
+
 from uuid import uuid4
 
 class TesteModel():

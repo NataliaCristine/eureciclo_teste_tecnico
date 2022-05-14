@@ -1,11 +1,12 @@
-from app.configs.database import db
-from dataclasses import dataclass 
+from dataclasses import dataclass
 from uuid import uuid4
-from sqlalchemy import Column,Integer,ForeignKey
-from sqlalchemy.orm import backref,relationship
+
+from app.configs.database import db
+from app.models import CompradorModel, ProdutoModel
+from sqlalchemy import Column, ForeignKey, Integer
 from sqlalchemy.dialects.postgresql import UUID
-from app.models.produto_model import ProdutoModel
-from app.models.comprador_model import CompradorModel
+from sqlalchemy.orm import backref, relationship
+
 
 @dataclass
 class CompraModel(db.Model):
@@ -16,7 +17,7 @@ class CompraModel(db.Model):
 
     __tablename__ = 'compra'
 
-    id=Column(UUID(as_uuid=True),primary_key=True,default=True)
+    id=Column(UUID(as_uuid=True),primary_key=True,default=uuid4)
     quantidade=Column(Integer)
     produto_id = Column(UUID(as_uuid=True),ForeignKey('produto.id'))
     comprador_id = Column(UUID(as_uuid=True),ForeignKey('comprador.id'))

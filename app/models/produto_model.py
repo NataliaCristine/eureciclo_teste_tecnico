@@ -1,10 +1,12 @@
-from app.configs.database import db
 from dataclasses import dataclass
 from uuid import uuid4
-from sqlalchemy import Column, String,Float,ForeignKey
-from sqlalchemy.orm import backref,relationship
+
+from app.configs.database import db
+from app.models import FornecedorModel
+from sqlalchemy import Column, Float, ForeignKey, String
 from sqlalchemy.dialects.postgresql import UUID
-from app.models.fornecedor_model import FornecedorModel
+from sqlalchemy.orm import backref, relationship
+
 
 @dataclass
 class ProdutoModel(db.Model):
