@@ -16,28 +16,32 @@
     <title>Eu reciclo</title>
   </head>
   <body>
-    <h1 class="tabela-logo">Eu<span class="logo">reciclo</span></h1>
-    <table class="table table-striped">
-      <tr>
-        <th scope="col">Comprador</th>
-        <th scope="col">Descrição</th>
-        <th scope="col">Preço Unitário</th>
-        <th scope="col">Quantidade</th>
-        <th scope="col">Endereço</th>
-        <th scope="col">Fornecedor</th>
-      </tr>
-      {% for i in output[0] %}
-      <tr>
-        <td scope="row">{{i["Comprador"]}}</td>
-        <td>{{i["Descrição"]}}</td>
-        <td>{{i["Preço Unitário"]}}</td>
-        <td>{{i["Quantidade"]}}</td>
-        <td>{{i["Endereço"]}}</td>
-        <td>{{i["Fornecedor"]}}</td>
-      </tr>
-      {% endfor %}
-    </table>
-    <h2>Receita bruta total dos registros:</h2>
-    <p class="total">R$ {{output[1]}}</p>
+    <a href="http://localhost:5000"
+      ><h1 class="tabela-logo">Eu<span class="logo">reciclo</span></h1></a
+    >
+    <div class="container-tabela">
+      <table class="table table-striped">
+        <tr>
+          <th scope="col">Comprador</th>
+          <th scope="col">Descrição</th>
+          <th scope="col">Preço Unitário</th>
+          <th scope="col">Quantidade</th>
+          <th scope="col">Endereço</th>
+          <th scope="col">Fornecedor</th>
+        </tr>
+        {% for i in output[0] %}
+        <tr>
+          <td scope="row">{{i["Comprador"]}}</td>
+          <td>{{i["Descrição"]}}</td>
+          <td>{{i["Preço Unitário"]}}</td>
+          <td>{{i["Quantidade"]}}</td>
+          <td>{{i["Endereço"]}}</td>
+          <td>{{i["Fornecedor"]}}</td>
+        </tr>
+        {% endfor %}
+      </table>
+      <h2>Receita bruta total dos registros:</h2>
+      <p class="total">R$ {{output[1]}}</p>
+    </div>
   </body>
 </html>

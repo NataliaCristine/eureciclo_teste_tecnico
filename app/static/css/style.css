@@ -1,7 +1,3 @@
-body {
-  width: 100vw;
-  height: 100vh;
-}
 .container {
   display: flex;
   flex-direction: column;
@@ -9,11 +5,25 @@ body {
   align-items: center;
   min-height: 10vh;
   width: 100vw;
-  height: 100vh;
+  height: 90vh;
 }
 
 .logo {
   color: #006400;
+}
+
+.container-tabela {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 5rem;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1rem;
 }
 
 h1 {
@@ -30,6 +40,8 @@ p {
 
 .tabela-logo {
   margin-bottom: 0.3rem;
+  display: flex;
+  justify-content: center;
 }
 
 .total {
