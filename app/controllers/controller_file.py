@@ -35,12 +35,16 @@ def open_file(path):
 
 
 def file_upload_save(data):
-    
-    for key,item in data.items():
-        extension = item.filename.split('.')[1]
-        paths= f'app/file/ar{uuid4()}.{extension}'
-        item.save(paths)
-        output = open_file(paths)
+    try:
+        for key,item in data.items():
+            extension = item.filename.split('.')[1]
+            if not extension == 'txt':
+                    return {"Erro":"Extensão não suportada"},415
+            paths= f'app/file/ar{uuid4()}.{extension}'
+            item.save(paths)
+            output = open_file(paths)
+    except IndexError:
+        return {"Erro":"Arquivo não enviado"},400
 
     return output
     
