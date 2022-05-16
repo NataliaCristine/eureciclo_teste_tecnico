@@ -12,6 +12,8 @@ def file_save(app):
         if request.method == 'POST':
             data = request.files
             output=file_upload_save(data)
+            if type(output[0]) == dict:
+                return render_template('erro.html', output=output)
             return render_template('tabela.html', output=output)
         
         output = list_all()

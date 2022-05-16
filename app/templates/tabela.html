@@ -4,22 +4,31 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS only -->
+    <link
+      href="{{ url_for('static', filename= 'css/bootstrap.min.css') }}"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename= 'css/style.css') }}"
+    />
     <title>Eu reciclo</title>
   </head>
   <body>
-    <header>Eu Reciclo</header>
-    <table>
+    <h1 class="tabela-logo">Eu<span class="logo">reciclo</span></h1>
+    <table class="table table-striped">
       <tr>
-        <td>Comprador</td>
-        <td>Descrição</td>
-        <td>Preço Unitário</td>
-        <td>Quantidade</td>
-        <td>Endereço</td>
-        <td>Fornecedor</td>
+        <th scope="col">Comprador</th>
+        <th scope="col">Descrição</th>
+        <th scope="col">Preço Unitário</th>
+        <th scope="col">Quantidade</th>
+        <th scope="col">Endereço</th>
+        <th scope="col">Fornecedor</th>
       </tr>
       {% for i in output[0] %}
       <tr>
-        <td>{{i["Comprador"]}}</td>
+        <td scope="row">{{i["Comprador"]}}</td>
         <td>{{i["Descrição"]}}</td>
         <td>{{i["Preço Unitário"]}}</td>
         <td>{{i["Quantidade"]}}</td>
@@ -28,7 +37,7 @@
       </tr>
       {% endfor %}
     </table>
-    <h2>Receita bruta total dos registros</h2>
-    <p>{{output[1]}}</p>
+    <h2>Receita bruta total dos registros:</h2>
+    <p class="total">R$ {{output[1]}}</p>
   </body>
 </html>
